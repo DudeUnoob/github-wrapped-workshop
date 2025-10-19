@@ -22,7 +22,7 @@ const GitHubWrapped = () => {
     try {
       const headers = {};
       if (token.trim()) {
-        headers.Authorization = `token ${token}`;
+        headers.Authorization = `Bearer ${token}`;
         setIsAuthenticated(true);
       }
       
@@ -248,7 +248,7 @@ const GitHubWrapped = () => {
         <div className="final-stats">
           <div className="final-stat">
             <span className="final-number">{repos.length}</span>
-            <span className="final-label">repositories created</span>
+            <span className="final-label">total repositories</span>
           </div>
           <div className="final-stat">
             <span className="final-number">{getMostRecentRepo()?.name || 'N/A'}</span>
